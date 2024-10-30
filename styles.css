@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Baloo+Bhaijaan+2:wght@400..800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+Arabic:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
 body {
-  background-color: #151521;
+  background-color: #31343d;
 }
 *{
   padding: 0;
@@ -163,7 +163,7 @@ body {
 
 .card-background {
   position: absolute;
-  background-color: #0c0f1a;
+  background-color: #3c414b;
   width: calc(70% + 73px);
   height: 110%;
   z-index: -1;
@@ -208,26 +208,6 @@ body {
   margin-bottom: 5px;
   margin-top: 80px;
   text-align: center;
-}
-
-
-.notes {
-  font-size: 1rem;
-  font-family: "Tajawal", sans-serif;
-  pointer-events: auto;
-  color: #ffffffd1;
-  margin-top: -5px;
-  margin-bottom: 10px;
-  text-align: center;
-  padding-top: -0.3px;
-  z-index: -3;
-}
-.notes .Brackets {
-  color: white;
-}
-.notes .Season {
-  color: #fa385e;
-  text-shadow:  0 0 1px #fa385e, 0 0 3px #fa385e, 0 0 5px #fa385e;
 }
 p {
   margin: 0;
@@ -311,12 +291,12 @@ p {
   scroll-margin-top: 158px;
 }
 .PageEnder {
-  width: 78%;
+  width: 100%;
   height: 1px;
   text-align: center;
   margin: 0 auto;
   margin-top: 30px;
-  opacity: 0.10;
+  opacity: 0.70;
 }
 
 .copyright {
@@ -336,34 +316,46 @@ body.no-scroll {
   overflow: hidden;
 }
 header {
+  position: fixed;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  justify-content: space-between; 
   padding: 10px 20px;
-  background-color: #0b0b0b;
-  opacity: 0.80;
-  position: relative;
+  background-color: #33373dbd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 3;
 }
-
+.headerEnder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00d8a3;
+}
 
 header img {
+  width: 50px;
+  height: auto; 
   position: absolute;
-  user-select: none;
-  width: 70px;
-  height: 70px;
-  margin-left: 70px; 
-  top: 10px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 nav {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: flex-end;
   flex-grow: 1;
-  margin: 0 auto;
-  height: 70px;
+  margin: 0 50px;
+  position: relative; 
+  z-index: 2;
 }
+
 
 nav a {
   display: flex;
@@ -372,26 +364,18 @@ nav a {
   user-select: none;
   margin: 0 0.5rem;
   font-size: 0.9rem;
-  color: var(--textColor);
+  color: #ffffff;
+  opacity: 0.80;
   text-decoration: none;
   font-family: "Tajawal", sans-serif;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
   transition: .2s;
 }
+
 nav a:hover {
-  opacity: 0.80;
+  opacity: 0.60;
 }
-
-header .nav-btn {
-  padding: 5px;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--textColor);
-  opacity: 0;
-}
-
 #navbar {
   display: flex;
 }
@@ -429,18 +413,25 @@ header .nav-btn {
     width: 280px;
   }
 }
+@media (max-width: 600px) {
+  header img {
+    margin-top: 32px;
+  }
+}
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 20vh;
+  height: 30vh;
+  padding-top: 70px;
 }
 
 .backgroundImg {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 70px);
+  margin-top: 70px;
   background-image: url('moon.png');
   background-size: cover;
   background-position: center;
@@ -497,10 +488,10 @@ header .nav-btn {
 
 
 .server-card {
-  background-color: #1b1e24;
+  background-color: #3c414b;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0px 0px 15px #00d8a3;
+  box-shadow: 0px 0px 7px #ffffff;
   transition: transform 0.1s, box-shadow 0.3s;
   text-decoration: none;
   color: white;
@@ -513,21 +504,10 @@ header .nav-btn {
 
 .server-card:hover {
   transform: scale(1.05);
-  box-shadow: 0px 0px 25px #00d8a3;
 }
 
 .server-card:active {
   transform: scale(0.9);
-}
-
-.server-card.red {
-  border: 3px solid #fa385e;
-  box-shadow: 0px 0px 15px #fa385e;
-}
-
-.server-card.black {
-  border: 3px solid #ffffff;
-  box-shadow: 0px 0px 15px #ffffff;
 }
 
 .server-icon img {
@@ -573,6 +553,7 @@ h2 {
   border: none;
   border-radius: 5px;
   font-size: 1em;
+  font-weight: 600;
   font-family: "Tajawal", sans-serif;
   cursor: pointer;
   text-align: left;
@@ -581,13 +562,11 @@ h2 {
 }
 
 .sidebar-btn:hover {
-  background-color: #282c34;
-  color: #00d8a3;
+  background-color: #3c414b;
 }
 
 .sidebar-btn.active {
-  background-color: #282c34;
-  color: #00d8a3;
+  background-color: #3c414b;
 }
 
 .rules-container {
@@ -604,9 +583,7 @@ h2 {
   width: 100%;
   padding: 8px;
   border-radius: 10px;
-  border: 2px solid #ffffff13;
   height: 100px;
-  background-color: #10101e;
   color: white;
 }
 
@@ -614,6 +591,7 @@ h2 {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.4;
+  margin-left: 20px;
   text-align: right;
   display: flex;
   align-items: center;
@@ -622,19 +600,19 @@ h2 {
 .rule-number {
   display: flex;
   text-align: left;
-  color: #ffffff;
-  opacity: 0.80;
+  color: #9A9CAE;
   user-select: none;
   font-size: 1rem;
+  font-weight: 500;
   font-family: "Tajawal", sans-serif;
   margin-right: 15px;
 }
 
 .rule-title {
   display: inline;
-  color: #00d8a3;
-  text-shadow: 0 0 1px #00d8a3, 0 0 3px #00d8a3, 0 0 5px #00d8a3;
-  font-weight: bold;
+  color: #B4BCC7;
+  opacity: 0.80;
+  font-weight: 600;
   font-size: 1.3em;
   font-family: "Tajawal", sans-serif;
   margin-left: 5px;
@@ -644,9 +622,21 @@ h2 {
   color: #ffffff97;
   font-size: 0.9em;
   font-family: "Tajawal", sans-serif;
+  font-weight: 600;
+  margin-left: 10px;
   margin-top: 10px;
   display: block;
-  text-align: right;
+  text-align: left;
+}
+.jailTime {
+  background-color: #b4bcc766;
+  border-radius: 0.55rem;
+  width: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: "Tajawal", sans-serif;
+  text-align: center;
+  margin-left: auto;
 }
 
 @media (max-width: 600px) {
@@ -676,6 +666,11 @@ h2 {
     font-size: 0.7rem;
   }
 }
+@media screen and (max-width: 320px) {
+  .jailTime {
+    margin-left: 150px;
+  }
+}
 .top-persons {
   display: flex; 
   justify-content: center;
@@ -686,31 +681,41 @@ h2 {
 .container {
   display: flex;
   flex-direction: column;
+  
 }
 
-h3 {
-  font-size: 14px;
-  color: #a3a3a3;
+h5 {
+  font-family: "Tajawal", sans-serif;
+  color: #9fabbd;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-p {
-  color: white;
+.Rank {
+  color: black;
+  font-weight: bold;
 }
 
 .person {
   user-select: none;
-  background-color: #00000087;
+  background-color: #3c414b;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
-  width: 170px;
+  height: 200px;
+  width: 155px;
   text-align: center;
+  transition: .2s;
+  border: 2px solid #9fabbd;
+  box-shadow: 0 0 10px #9fabbd9a;
 }
 
 .person img {
-  width: 100px;
-  height: 100px;
+  width: 80%;
+  height: 60%;
+  object-fit: cover;
   border-radius: 50%;
+  margin-top: 12px;
 }
 
 .row {
@@ -721,7 +726,7 @@ p {
 
 .person:hover, #top-person:hover {
   transform: scale(1.1);
-  box-shadow: 0px 0px 25px #00d8a3;
+  box-shadow: 0px 0px 15px white;
 }
 
 @media (max-width: 768px) {
@@ -743,4 +748,173 @@ p {
     width: 80px;
     height: 80px;
 }
+}
+@media (max-width: 1161px) {
+  
+  .description-title {
+    font-size: 1.5rem;
+  }
+
+  .description-text {
+    font-size: 1rem;
+  }
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.card-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.card-background {
+  position: absolute;
+  background-color: #3c414b;
+  width: calc(70% + 73px);
+  height: 110%;
+  z-index: -1;
+  box-shadow: 0 0 10px #9fabbd9a;
+  border-radius: 12px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -2;
+  padding-right: 13%;
+}
+
+.card {
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.count {
+  font-size: 2rem;
+  font-family: "Lato", sans-serif;
+  color: white;
+  animation: glowAnimation 1.5s infinite alternate;
+  margin-bottom: 5px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+
+.notes {
+  font-size: 1rem;
+  font-family: "Tajawal", sans-serif;
+  pointer-events: auto;
+  color: #ffffffd1;
+  opacity: 0.80;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding-top: -0.3px;
+  z-index: -3;
+}
+p {
+  margin: 0;
+  font-family: "Tajawal", sans-serif;
+  color: rgba(255, 255, 255, 0.575);
+  z-index: 2;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.description-section {
+  position: relative;
+  margin: 20px 0;
+  padding-bottom: 20px;
+  text-align: right;
+  width: calc(100% - 10px);
+  margin-right: auto;
+  margin-left: 10px;
+  direction: rtl;
+}
+
+.description-title {
+  display: flex;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  font-size: 2rem;
+  font-family: "Tajawal", sans-serif;
+  padding: 0 20px;
+  margin-right: 180px;
+  max-width: none; 
+  text-decoration: none;
+  padding-left: 10px;
+  z-index: 2;
+}
+
+.title-text { 
+  font-family: "Tajawal", sans-serif; 
+  line-height: 1.5;
+}
+
+.description-title .familyName {
+  color: #00d8a3;
+  text-shadow: 0 0 1px #00d8a3, 0 0 2px #00d8a3, 0 0 2px #00d8a3;
+}
+
+.description-text {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Tajawal", sans-serif;
+  max-width: 1100px;
+  padding: 0 20px;
+  margin-right: 180px;
+  text-decoration: none;
+  padding-left: 10px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .description-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .description-title {
+    margin-right: 10px;
+  }
+
+  .description-text {
+    margin-right: 10px;
+  }
+  .card-background {
+    width: 100%;
+  }
+  .notes {
+    margin-top: 20px;
+  }
+}
+.correct-icon {
+  height: 20px;
+  width: 20px;
 }
