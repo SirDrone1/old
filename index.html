@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="servers.css">
+    <title>Worthington | ورثنيجتون</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Title">
+        <nav id="navbar" class="hidden">
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#FromFamily" class="family-link">عن العائلة</a>
+            <a href="rules.html">قوانين العائلة</a>
+            <a href="crew.html">طاقم العائلة</a>
+            <a href="test.html">أختبر نفسك</a>
+            <a href="index.html#serversCard">الخوادم</a>
+            <button class="nav-btn nav-close-btn" id="closeBtn"><i class="fas fa-times"></i></button>
+        </nav>
+        <button class="nav-btn" id="openBtn"><i class="fas fa-bars"></i></button>
+        <select id="selectMenu" class="hidden">
+            <option value="#serversCard">الخوادم</option>
+            <option value="test.html">أختبر نفسك</option>
+            <option value="crew.html">طاقم العائلة</option>
+            <option value="rules.html" >قوانين العائلة</option>
+            <option value="#FromFamily">عن العائلة</option>
+            <option value="index.html">الرئيسية</option>
+        </select>
+    </header>
+<div class="image-container">
+    <div class="backgroundImage"></div>
+    <img src="logo-text.png" class="title-image" alt="title" />
+    <a href="https://discord.gg/worthington" class="center-button">الانضمام للديسكورد</a>
+</div>
+
+<hr class='ImageEnder' />
+
+<div class="description-section">
+    <h2 class="description-title">عائلة <span class='familyName'>ورثنيجتون</span> في سيرفر <span class='wnashName'>وناسة تايم</span></h2>
+    <p class="description-text">
+        ورثنيجتون التاريخ يحكي نفسه من الإسم ، هي عائلة معروفة ومتكاملة عُرفت بِالنسب والأصل والفصل في سيرفر وناسة تايم للحياة الواقعية داخل مجتمع MTA:SA. مُيزت العائلة بتاريخ مؤسسيها وأجدادها وخوضِهم للحروب والمعارِك والصعاب لتوفير بيئة مُميزة مليئة بالرفاهية. وقيل في أحد ليالي أجداد العائلة ، سأجعل منكم عائلة تحضى بِرفاهية تلك التي لم يحضى بها أجدادكم كذلك اليوم تمتلك العائلة الكثير من المُمتلكات باهضة الثمن ، وشركات وافرادها ذو مناصب عُليا ويتطلع جميع افرادها إلى النجاح والإستمرار بالنجاحات وتعتبر مكاناً رائع لتكوين المُتعة والإثارة والتشويق
+    </p>
+</div>
+
+<div class="card-section">
+    <div class="card-background" id="FromFamily"></div>
+    <div class="card">
+        <div class="content">
+            <div class="count" id="memberCount">0+</div>
+            <p>أعضاء الديسكورد</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <div class="count" id="factionCount">0+</div>
+            <p>فاكشن العائلة</p>
+        </div>
+    </div>
+</div>
+
+<p class="notes">إحصائيات العائلة للموسم الحالي <span class='Brackets'>( <span class='Season'>الموسم الثالث</span> )</span></p>
+
+<div class="card-section" id="serversCard">
+    <div class="server-grid">
+        <a href="https://discord.gg/worthington" target="_blank" rel="noopener noreferrer" class="server-card">
+            <div class="server-icon">
+                <img src="worthington.png" alt="الديسكورد الرسمي للعائلة">
+            </div>
+            <h2>الديسكورد الرسمي للعائلة</h2>
+        </a>
+        <a href="https://discord.gg/JS7bAvBPtA" target="_blank" rel="noopener noreferrer" class="server-card black">
+            <div class="server-icon">
+                <img src="blackhands.png" alt="عصابة اليد السوداء">
+            </div>
+            <h2>عصابة اليد السوداء</h2>
+        </a>
+        <a href="https://discord.gg/wnashtime" target="_blank" rel="noopener noreferrer" class="server-card red">
+            <div class="server-icon">
+                <img src="wnashtime.png" alt="وناسة تايم للحياة الواقعية">
+            </div>
+            <h2>وناسة تايم للحياة الواقعية</h2>
+        </a>
+    </div>
+</div>
+
+<hr class="PageEnder" />
+<p class='copyright'>© 2024 Worthington Copyrights - Developed by iDrone</p>
+
+<script>
+    const memberCountElement = document.getElementById('memberCount');
+    const factionCountElement = document.getElementById('factionCount');
+    let hasAnimated = false;
+
+    function incrementCount(element, target) {
+        let count = 0;
+        const increment = target / 100;
+        const interval = setInterval(() => {
+            count += increment;
+            if (count >= target) {
+                clearInterval(interval);
+                element.textContent = target + '+';
+            } else {
+                element.textContent = Math.ceil(count) + '+';
+            }
+        }, 30);
+    }
+
+    function onIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                incrementCount(memberCountElement, 400);
+                incrementCount(factionCountElement, 246);
+                hasAnimated = true;
+                observer.unobserve(entry.target);
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(onIntersection, {
+        threshold: 0.1 
+    });
+
+    observer.observe(document.querySelector('.card-section'));
+    const selectMenu = document.getElementById('selectMenu');
+
+selectMenu.addEventListener('change', function() {
+    const selectedValue = this.value;
+
+    if (selectedValue === 'rules.html') {
+        window.location.href = selectedValue;
+    } else if (selectedValue === 'crew.html') {
+        window.location.href = selectedValue;
+    } else if (selectedValue === 'test.html') {
+        window.location.href = selectedValue
+        } else {
+        window.location.href = 'index.html'
+    }
+});
+</script>
+</body>
+</html>

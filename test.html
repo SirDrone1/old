@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="test.css">
+    <title>Worthington | ورثنيجتون</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Title">
+        <nav id="navbar" class="hidden">
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#FromFamily" class="family-link">عن العائلة</a>
+            <a href="rules.html">قوانين العائلة</a>
+            <a href="crew.html">طاقم العائلة</a>
+            <a href="test.html">أختبر نفسك</a>
+            <a href="index.html#serversCard">الخوادم</a>
+            <button class="nav-btn nav-close-btn" id="closeBtn"><i class="fas fa-times"></i></button>
+        </nav>
+        <button class="nav-btn" id="openBtn"><i class="fas fa-bars"></i></button>
+        <select id="selectMenu" class="hidden">
+            <option value="#serversCard">الخوادم</option>
+            <option value="test.html">أختبر نفسك</option>
+            <option value="crew.html">طاقم العائلة</option>
+            <option value="rules.html">قوانين العائلة</option>
+            <option value="#FromFamily">عن العائلة</option>
+            <option value="index.html">الرئيسية</option>
+        </select>
+    </header>
+    <div class="imageContainer">
+        <div class="backgroundImg"></div>
+        <div class="title-and-line">
+            <h1 class="title">أختبر نفسك</h1>
+            <hr class='backgroundEnd'/>
+        </div>
+    </div>
+    <div class="quiz-container">
+        <h1 id="question-title" class="question-title"></h1>
+        <p id="question-counter" class="question-counter"></p>
+        <div id="options-container" class="options-container"></div>
+        <p id="timer" class="timer">الوقت المتبقي: 10 ثواني</p>
+    </div>
+    <div id="result-container">
+        <h2 id="result-text" style="color: white;"></h2>
+        <button class="reTest" id="reTest" style="display: inline-block;">إعادة الاختبار</button>
+    </div>
+    <hr class="PageEnder" />
+    <p class='copyright' id="copyright">© 2024 Worthington Copyrights - Developed by iDrone</p>
+
+    <script>
+        const questions = [
+        { word: "ATA", correctAnswer: "نقل ممتلكات من شخصية إلى شخصية" },
+        { word: "CK", correctAnswer: "إعدام شخصية من قبل مشرف" },
+        { word: "DM", correctAnswer: "قتل شخص بدون سبب" },
+        { word: "DOS", correctAnswer: "شارة بدون لبس الخدمة أو العكس" },
+        { word: "GR", correctAnswer: "القاعدة الذهبية: إحترام اللاعبين" },
+        { word: "LTA", correctAnswer: "الهروب من الآربي" },
+        { word: "MD", correctAnswer: "كلبشة شخص بدون سبب" },
+        { word: "MA", correctAnswer: "تعدد الحسابات" },
+        { word: "MG", correctAnswer: "التفريق بين الشات الواقعي والغير واقعي" },
+        { word: "MC", correctAnswer: "الضغط على الماوس عن طريق الخطأ" }
+            ];
+
+        let currentQuestionIndex = 0;
+        let timer;
+        let timeRemaining = 10;
+        let correctAnswersCount = 0;
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function startQuiz() {
+            shuffleArray(questions);
+            currentQuestionIndex = 0;
+            correctAnswersCount = 0;
+            document.querySelector(".quiz-container").classList.remove("hidden");
+            document.getElementById("result-container").style.display = "none";
+            document.getElementById("copyright").style.display = "block";
+            displayQuestion();
+        }
+
+        function displayQuestion() {
+            clearInterval(timer);
+            timeRemaining = 10;
+            const timerDisplay = document.getElementById("timer");
+            timerDisplay.innerText = `الوقت المتبقي: ${timeRemaining} ثواني`;
+
+            const question = questions[currentQuestionIndex];
+            const title = document.getElementById("question-title");
+            title.innerText = `${question.word}`;
+
+            const questionCounter = document.getElementById("question-counter");
+            questionCounter.innerText = `السؤال ${currentQuestionIndex + 1} من ${questions.length}`;
+
+            const optionsContainer = document.getElementById("options-container");
+            optionsContainer.innerHTML = '';
+
+            const answers = generateRandomAnswers(question.correctAnswer);
+            answers.forEach(answer => {
+                const button = document.createElement("button");
+                button.innerText = answer;
+                button.className = "option-button";
+                button.onclick = () => checkAnswer(answer, question.correctAnswer, button);
+                optionsContainer.appendChild(button);
+            });
+
+            timer = setInterval(() => {
+                timeRemaining--;
+                timerDisplay.innerText = `الوقت المتبقي: ${timeRemaining} ثواني`;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timer);
+                    revealCorrectAnswer(question.correctAnswer);
+                    nextQuestion();
+                }
+            }, 1000);
+        }
+
+        function generateRandomAnswers(correctAnswer) {
+            const randomAnswers = [
+                "فعل شيء خارق عن الطبيعة", "قتل شخص بدون سبب", "قتل شخص بإستعمال المركبة بدون سبب",
+                "القتل بدافع الإنتقام", "نقل ممتلكات من شخصية إلى شخصية", "إعدام شخصية من قبل مشرف",
+                "قتل شخص بدون سبب", "شارة بدون لبس الخدمة أو العكس", "القاعدة الذهبية: إحترام اللاعبين",
+                "الهروب من الآربي", "كلبشة شخص بدون سبب", "تعدد الحسابات", "التفريق بين الشات الواقعي والغير واقعي",
+                "الضغط على الماوس عن طريق الخطأ", "إنزال الشخص من مركبته", "السرقة والقفز فوق المركبات المتحركة",
+                "فعل الأشياء دون إستخدام الآربي", "القتل بدافع الإنتقام", "قتل شخص في مكان الريسبون",
+                "فعل شيء مغزز", "فعل إعلان خاطئ", "حالة خاطئة للشخصية", "فعل شيء خارق عن الطبيعة",
+                "فقدان الذاكرة بعد الموت", "إستفزاز الشرطة لغرض المتعة", "قتل شخص بإستعمال المركبة بدون سبب"
+            ];
+            const answers = [correctAnswer];
+            while (answers.length < 3) {
+                const randomAnswer = randomAnswers[Math.floor(Math.random() * randomAnswers.length)];
+                if (!answers.includes(randomAnswer)) {
+                    answers.push(randomAnswer);
+                }
+            }
+            return answers.sort(() => Math.random() - 0.5);
+        }
+
+        function checkAnswer(selectedAnswer, correctAnswer, button) {
+            clearInterval(timer);
+            const options = document.querySelectorAll(".option-button");
+            options.forEach(option => {
+                option.disabled = true;
+                if (option.innerText === correctAnswer) {
+                    option.style.backgroundColor = "#00d8a3";
+                } else {
+                    option.style.backgroundColor = "red";
+                }
+            });
+
+            if (selectedAnswer === correctAnswer) {
+                correctAnswersCount++;
+                button.style.backgroundColor = "#00d8a3";
+            } else {
+                button.style.backgroundColor = "red";
+            }
+
+            setTimeout(nextQuestion, 2000);
+        }
+
+        function revealCorrectAnswer(correctAnswer) {
+            const options = document.querySelectorAll(".option-button");
+            options.forEach(option => {
+                if (option.innerText === correctAnswer) {
+                    option.style.backgroundColor = "#00d8a3";
+                }
+            });
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                endQuiz();
+            }
+        }
+
+        function endQuiz() {
+            document.querySelector(".quiz-container").style.display = "none";
+            
+            const resultContainer = document.getElementById("result-container");
+            resultContainer.style.display = "block"; 
+            document.getElementById("copyright").style.display = "none"; 
+            const resultText = document.getElementById("result-text");
+            resultText.innerText = `لقد انتهى الاختبار! الإجابات الصحيحة: ${correctAnswersCount} من ${questions.length}`;
+            resultText.style.color = "white";
+            resultText.style.userSelect = "none"
+        }
+
+        function resetQuiz() {
+            document.getElementById("result-container").style.display = "none"; 
+            startQuiz();
+        }
+
+        document.getElementById("reTest").onclick = function() {
+            location.reload();
+        };
+        document.addEventListener("DOMContentLoaded", startQuiz);
+        document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        stopTimer();
+    } else {
+        startTimer();
+    }
+});
+    </script>
+</body>
+</html>

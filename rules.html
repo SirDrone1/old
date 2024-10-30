@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="rules.css">
+    <title>Worthington | ورثنيجتون</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Title">
+        <nav id="navbar" class="hidden">
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#FromFamily" class="family-link">عن العائلة</a>
+            <a href="rules.html">قوانين العائلة</a>
+            <a href="crew.html">طاقم العائلة</a>
+            <a href="test.html">أختبر نفسك</a>
+            <a href="index.html#serversCard">الخوادم</a>
+            <button class="nav-btn nav-close-btn" id="closeBtn"><i class="fas fa-times"></i></button>
+        </nav>
+        <button class="nav-btn" id="openBtn"><i class="fas fa-bars"></i></button>
+        <select id="selectMenu" class="hidden">
+            <option value="#serversCard">الخوادم</option>
+            <option value="test.html">أختبر نفسك</option>
+            <option value="crew.html">طاقم العائلة</option>
+            <option value="rules.html" >قوانين العائلة</option>
+            <option value="#FromFamily">عن العائلة</option>
+            <option value="index.html">الرئيسية</option>
+        </select>
+    </header>
+    
+    <div class="imageContainer">
+        <div class="backgroundImg"></div>
+        <div class="title-and-line">
+            <h1 class="title">القوانين</h1>
+            <hr class='backgroundEnd'/>
+        </div>
+    </div>
+    <div class="content-container">
+        <aside class="sidebar">
+            <button class="sidebar-btn active" onclick="changeRules('familyRules')">قوانين العائلة</button>
+            <button class="sidebar-btn" onclick="changeRules('jailTimes')">أوقات السجون</button>
+            <button class="sidebar-btn" onclick="changeRules('joinRequireds')">متطلبات الدخول للعائلة</button>
+        </aside>
+        <script>
+            function changeRules(section) {
+                const rulesContainer = document.getElementById('rulesContainer');
+                let rulesHtml = '';
+                
+                const rulesData = {
+                    familyRules: {
+                        rules: [
+                            {
+                                title: "الأخلاق والإحترام",
+                                description: "يجب إحترام الجميع، المخالفة ستعرضك لعقوبات وخيمة"
+                            },
+                            {
+                                title: "النشر والتجارة",
+                                description: "يُمنع النشر والتجارة والإعلان والإنتحال في السيرفر او في الخاص للأعضاء منعًا نهائيًا"
+                            },
+                            {
+                                title: "العنصرية",
+                                description: "يُمنع العنصرية بجميع أنواعها بناءً على سمات مثل العرق أو الأصل القومي أو الجنس أو الانتماء الديني"
+                            },
+                            {
+                                title: "الأسماء والصور",
+                                description: "يُمنع استخدام أسماء غير مناسبة او صور غير مناسبة قد تتعرض للحظر النهائي او الطرد من السيرفر"
+                            },
+                            {
+                                title: "المحتوى",
+                                description: "يُمنع نشر المحتوى الغير اخلاقي والاباحي في السيرفر وعقوبته الحظر النهائي"
+                            },
+                            {
+                                title: "المواضيع السياسية والدينية",
+                                description: "يًمنع منعًا باتًا التحدث بالمواضيع السياسية او الدينية"
+                            },
+                            {
+                                title: "الحسابات",
+                                description: "يُمنع أستخدام حسابات أخرى لتفادي العقوبات"
+                            },
+                            {
+                                title: "طلب الرتب الإدارية",
+                                description: "يُمنع طلب الرتب الإدارية او الرتب الشرفية منعًا باتًا وقد يضعك طلبك في القائمة السوداء للإدارة"
+                            },
+                            {
+                                title: "القذف والسب",
+                                description: " يُمنع القذف والسب بجميع انواعه، كما يُمنع استخدام ألفاظ غير مناسبة للفئة العمرية دون سن الـ 13"
+                            }
+                        ]
+                    },
+                    jailTimes: {
+                        rules: [
+                            {
+                                title: "PG <span style='color: white; opacity: 0.50; text-shadow: none;'>( فعل شيء خارق عن الطبيعة )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>120m</span>"
+                            },
+                            {
+                                title: "DM <span style='color: white; opacity: 0.50; text-shadow: none;'>( القتل بدون سبب )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>150m</span>"
+                            },
+                            {
+                                title: "VDM <span style='color: white; opacity: 0.50; text-shadow: none;'>( قتل اللاعبين بإستعمال المركبة بدون سبب )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>150m</span>"
+                            },
+                            {
+                                title: "RK <span style='color: white; opacity: 0.50; text-shadow: none;'>( القتل بدافع الإنتقام )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>100m</span>"
+                            },
+                            {
+                                title: "SK <span style='color: white; opacity: 0.50; text-shadow: none;'>( القتل في منطقة الريسبون )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>150m</span>"
+                            },                            {
+                                title: "TK <span style='color: white; opacity: 0.50; text-shadow: none;'>( قتل صديقك بالفاكشن )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>150m</span>"
+                            },                            {
+                                title: "PK <span style='color: white; opacity: 0.50; text-shadow: none;'>( فقدان الذاكرة بعد الموت )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>100m</span>"
+                            },                            {
+                                title: "SL <span style='color: white; opacity: 0.50; text-shadow: none;'>( فعل أشياء مغززة )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>80m</span>"
+                            },                            {
+                                title: "WS <span style='color: white; opacity: 0.50; text-shadow: none;'>( حالة خاطئة للشخصية )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>30m</span>"
+                            },                            {
+                                title: "WA <span style='color: white; opacity: 0.50; text-shadow: none;'>( وضع إعلان خاطئ )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>30m</span>"
+                            },                            {
+                                title: "PD <span style='color: white; opacity: 0.50; text-shadow: none;'>( إستفزاز الشرطة لغرض المتعة )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>60m</span>"
+                            },                            {
+                                title: "DOS <span style='color: white; opacity: 0.50; text-shadow: none;'>( شارة بدون ديوتي أو العكس صحيح )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>80m</span>"
+                            },                            {
+                                title: "NJ <span style='color: white; opacity: 0.50; text-shadow: none;'>( السرقة والقفز فوق المركبات المتحركة )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>60m</span>"
+                            },                            {
+                                title: "NG <span style='color: white; opacity: 0.50; text-shadow: none;'>( إنزال الشخص من مركبته )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>60m</span>"
+                            },                            {
+                                title: "None-RP <span style='color: white; opacity: 0.50; text-shadow: none;'>( فعل الأشياء دون إستخدام الآربي )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>80m</span>"
+                            },                            {
+                                title: "Breaking property <span style='color: white; opacity: 0.50; text-shadow: none;'>( تكسير الممتلكات )</span>",
+                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>30m</span>"
+                            },
+                            
+                        ]
+                    },
+                    joinRequireds: {
+                        rules: [
+                            {
+                                title: "الشخصيات",
+                                description: "يجب عليك التقديم بالشخصية الأساسية فقط"
+                            },
+                            {
+                                title: "عدد ساعات التواجد",
+                                description: "يجب أن تكون شخصيتك الأساسية قد تجاوزت الـ 100 ساعة داخلها"
+                            },
+                            {
+                                title: "السجل الإداري",
+                                description: "يجب أن يكون سجل حسابك أن لا يتجاوز الـ 4 مخالفات إدارية"
+                            },
+                            {
+                                title: "الخبرة الكافية",
+                                description: "يجب أن تكون لديك كامل الخبرات في الحياة الواقعية"
+                            }
+                        ]
+                    }
+                };
+                
+                if (rulesData[section]) {
+                    const { rules } = rulesData[section];
+                    
+                    
+                    rules.forEach((rule, index) => {
+                        rulesHtml += `
+                            <div class="rule">
+                                <p>
+                                    <span class="rule-number">${index + 1}.</span>
+                                    <span class="rule-title">${rule.title}</span>
+                                </p>
+                                <small class="rule-description">${rule.description}</small>
+                            </div>`;
+                    });
+                }
+                
+                rulesContainer.innerHTML = rulesHtml;
+            
+                const rules = rulesContainer.querySelectorAll('.rule');
+                rules.forEach(rule => {
+                    rule.style.backgroundColor = '#10101e';
+                    rule.style.borderRadius = '10px';
+                    rule.style.padding = '8px';
+                    rule.style.border = '2px solid #ffffff13'; 
+                    rule.style.marginBottom = '8px';
+                    rule.style.height = '100px';
+                });
+                
+                document.querySelectorAll('.sidebar-btn').forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            }
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                changeRules('familyRules');
+            });
+            </script>
+            
+            
+<section class="rules-container" id="rulesContainer">
+</section>
+    </div>
+    <hr class="PageEnder" />
+    <p class='copyright'>© 2024 Worthington Copyrights - Developed by iDrone</p>
+<script>
+    const selectMenu = document.getElementById('selectMenu');
+
+selectMenu.addEventListener('change', function() {
+    const selectedValue = this.value;
+
+    if (selectedValue === 'index.html') {
+        window.location.href = selectedValue;
+    } else if (selectedValue === 'crew.html') {
+        window.location.href = selectedValue;
+    } else if (selectedValue === 'test.html') {
+            window.location.href = selectedValue
+        }});
+</script>
+</body>
+</html>

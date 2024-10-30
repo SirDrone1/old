@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Baloo+Bhaijaan+2:wght@400..800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Sans+Arabic:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Baloo+Bhaijaan+2:wght@400..800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+Arabic:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+body {
+  background-color: #151521;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background-size: 1600px;
+}
+:root {
+  --mainColor: #00000076;
+  --mainColorLight: #5767aa;
+  --secondaryColor: rgba(255, 255, 255, 0.8);
+  --textColor: rgba(255, 255, 255, 0.733);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center-button {
+  user-select: none;
+  position: absolute;
+  background-color: #00d8a2bb;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 70px;
+  font-family: "Tajawal", sans-serif;
+  width: 15vw;
+  max-width: 250px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: .2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.center-button:hover {
+  background-color: #00d8a3;
+}
+
+.ImageEnder{
+  width: 100%;
+  border: none;
+  border-top: 5px solid #00d8a3;
+  position: relative;
+  top: -5px;
+  margin: 0;
+  z-index: 3;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #00d8a3;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282c34;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.backgroundImage {
+  position: absolute;
+  background-image: url('background.png');
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.title-image {
+  user-select: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -80px;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  max-width: 800px;
+  min-width: 200px;
+  height: auto;
+  max-height: 60vh;
+  z-index: 1;
+}
+
+
+@media (max-width: 1161px) {
+  .center-button {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    top: 60%;
+  }
+
+  .description-title {
+    font-size: 1.5rem;
+  }
+
+  .description-text {
+    font-size: 1rem;
+  }
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.center-button {
+  top: 60%;
+}
+
+.card-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.card-background {
+  position: absolute;
+  background-color: #0c0f1a;
+  width: calc(70% + 73px);
+  height: 110%;
+  z-index: -1;
+  border-radius: 12px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -2;
+  padding-right: 13%;
+}
+
+.card {
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.count {
+  font-size: 2rem;
+  font-family: "Lato", sans-serif;
+  color: white;
+  animation: glowAnimation 1.5s infinite alternate;
+  margin-bottom: 5px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+
+.notes {
+  font-size: 1rem;
+  font-family: "Tajawal", sans-serif;
+  pointer-events: auto;
+  color: #ffffffd1;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding-top: -0.3px;
+  z-index: -3;
+}
+.notes .Brackets {
+  color: white;
+}
+.notes .Season {
+  color: #fa385e;
+  text-shadow:  0 0 1px #fa385e, 0 0 3px #fa385e, 0 0 5px #fa385e;
+}
+p {
+  margin: 0;
+  font-family: "Tajawal", sans-serif;
+  color: rgba(255, 255, 255, 0.575);
+  z-index: 2;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.description-section {
+  position: relative;
+  margin: 20px 0;
+  padding-bottom: 20px;
+  text-align: right;
+  width: calc(100% - 10px);
+  margin-right: auto;
+  margin-left: 10px;
+  direction: rtl;
+}
+
+.description-title .familyName {
+  font-family: "Tajawal", sans-serif;
+  color: #00d8a3;
+  text-shadow: 0 0 1px #00d8a3, 0 0 3px #00d8a3, 0 0 5px #00d8a3;
+}
+
+.description-title .wnashName {
+  font-family: "Tajawal", sans-serif;
+  color: #fa385e;
+  text-shadow:  0 0 1px #fa385e, 0 0 3px #fa385e, 0 0 5px #fa385e;
+}
+
+.description-text {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Tajawal", sans-serif;
+  max-width: 1100px;
+  padding: 0 20px;
+  margin-right: 180px;
+  text-decoration: none;
+  padding-left: 10px;
+  text-align: right;
+}
+
+.description-title {
+  color: white;
+  overflow: hidden;
+  font-size: 2rem;
+  font-family: "Tajawal", sans-serif;
+  padding: 0 20px;
+  margin-right: 180px;
+  max-width: none; 
+  text-decoration: none;
+  padding-left: 10px;
+  text-align: right;
+  z-index: 2a;
+}
+
+@media (max-width: 600px) {
+  .description-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .description-title {
+    margin-right: 10px;
+  }
+
+  .description-text {
+    margin-right: 10px;
+  }
+  .card-background {
+    width: 100%;
+  }
+  .notes {
+    margin-top: 20px;
+  }
+}
+#FromFamily {
+  scroll-margin-top: 158px;
+}
+.PageEnder {
+  width: 78%;
+  height: 1px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  opacity: 0.10;
+}
+
+.copyright {
+  text-align: center;
+  font-family: "Tajawal", sans-serif;
+  margin-bottom: 7px;
+  margin-top: 90px;
+  color: white;
+  opacity: 0.50;
+}
+@media screen and (max-width: 600px) {
+  .copyright {
+    font-size: 12px;
+  }
+}
+body.no-scroll {
+  overflow: hidden;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #0b0b0b;
+  opacity: 0.80;
+  position: relative;
+  z-index: 3;
+}
+
+
+header img {
+  position: absolute;
+  user-select: none;
+  width: 70px;
+  height: 70px;
+  margin-left: 70px; 
+  top: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0 auto;
+  height: 70px;
+}
+
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--textColor);
+  text-decoration: none;
+  font-family: "Tajawal", sans-serif;
+  padding: 0.5rem 1.5rem;
+  transition: .2s;
+}
+nav a:hover {
+  opacity: 0.80;
+}
+
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  opacity: 0;
+}
+
+#navbar {
+  display: flex;
+}
+.hidden {
+  display: none;
+}
+
+.nav-btn {
+  display: block;
+}
+
+.nav-btn.nav-close-btn {
+  display: none;
+}
+
+.responsive_nav {
+  display: block;
+}
+@media (max-width: 948px) {
+    #navbar {
+        display: none;
+    }
+    #selectMenu {
+        display: block;
+        border: none;
+        border-radius: 2px;
+        background-color: #1b1e24;
+        color: white;
+        font-family: "Tajawal", sans-serif;
+      }
+}
+
+@media screen and (max-width: 600px) {
+  .server-card {
+    width: 280px;
+  }
+}
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+}
+
+.backgroundImg {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('moon.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.title-and-line {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  left: 15%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  margin: 0;
+  margin: 0 0 10px 10px;
+  padding-left: 0;
+  font-size: 30px;
+  font-family: "Tajawal", sans-serif;
+  color: white;
+  text-align: left;
+}
+
+.backgroundEnd {
+  border: none;
+  border-top: 2px solid white;
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+  }
+  header img {
+    top: 2px;
+  }
+  .backgroundImg {
+      top: -2px;
+  }
+}

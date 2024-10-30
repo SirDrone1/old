@@ -1,0 +1,171 @@
+@media (max-width: 1161px) {
+  
+    .description-title {
+      font-size: 1.5rem;
+    }
+  
+    .description-text {
+      font-size: 1rem;
+    }
+    .card {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+  
+  .card-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  
+  .card-background {
+    position: absolute;
+    background-color: #0c0f1a;
+    width: calc(70% + 73px);
+    height: 110%;
+    z-index: -1;
+    border-radius: 12px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+    padding-right: 13%;
+  }
+  
+  .card {
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    flex: 1 1 250px;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .count {
+    font-size: 2rem;
+    font-family: "Lato", sans-serif;
+    color: white;
+    animation: glowAnimation 1.5s infinite alternate;
+    margin-bottom: 5px;
+    margin-top: 80px;
+    text-align: center;
+  }
+  
+  
+  .notes {
+    font-size: 1rem;
+    font-family: "Tajawal", sans-serif;
+    pointer-events: auto;
+    color: #ffffffd1;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: -0.3px;
+    z-index: -3;
+  }
+  .notes .Brackets {
+    color: white;
+  }
+  .notes .Season {
+    color: #fa385e;
+    text-shadow:  0 0 1px #fa385e, 0 0 3px #fa385e, 0 0 5px #fa385e;
+  }
+  p {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    color: rgba(255, 255, 255, 0.575);
+    z-index: 2;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .description-section {
+    position: relative;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    text-align: right;
+    width: calc(100% - 10px);
+    margin-right: auto;
+    margin-left: 10px;
+    direction: rtl;
+  }
+  
+  .description-title .familyName {
+    font-family: "Tajawal", sans-serif;
+    color: #00d8a3;
+    text-shadow: 0 0 1px #00d8a3, 0 0 3px #00d8a3, 0 0 5px #00d8a3;
+  }
+  
+  .description-title .wnashName {
+    font-family: "Tajawal", sans-serif;
+    color: #fa385e;
+    text-shadow:  0 0 1px #fa385e, 0 0 3px #fa385e, 0 0 5px #fa385e;
+  }
+  
+  .description-text {
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Tajawal", sans-serif;
+    max-width: 1100px;
+    padding: 0 20px;
+    margin-right: 180px;
+    text-decoration: none;
+    padding-left: 10px;
+    text-align: right;
+  }
+  
+  .description-title {
+    color: white;
+    overflow: hidden;
+    font-size: 2rem;
+    font-family: "Tajawal", sans-serif;
+    padding: 0 20px;
+    margin-right: 180px;
+    max-width: none; 
+    text-decoration: none;
+    padding-left: 10px;
+    text-align: right;
+    z-index: 2a;
+  }
+  
+  @media (max-width: 600px) {
+    .description-section {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .description-title {
+      margin-right: 10px;
+    }
+  
+    .description-text {
+      margin-right: 10px;
+    }
+    .card-background {
+      width: 100%;
+    }
+    .notes {
+      margin-top: 20px;
+    }
+  }
