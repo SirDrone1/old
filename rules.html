@@ -8,27 +8,27 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Title">
-        <nav id="navbar" class="hidden">
-            <a href="index.html">الرئيسية</a>
-            <a href="index.html#FromFamily" class="family-link">عن العائلة</a>
-            <a href="rules.html">قوانين العائلة</a>
-            <a href="crew.html">طاقم العائلة</a>
-            <a href="test.html">أختبر نفسك</a>
-            <a href="index.html#serversCard">الخوادم</a>
-            <button class="nav-btn nav-close-btn" id="closeBtn"><i class="fas fa-times"></i></button>
-        </nav>
-        <button class="nav-btn" id="openBtn"><i class="fas fa-bars"></i></button>
-        <select id="selectMenu" class="hidden">
-            <option value="#serversCard">الخوادم</option>
-            <option value="test.html">أختبر نفسك</option>
-            <option value="crew.html">طاقم العائلة</option>
-            <option value="rules.html" >قوانين العائلة</option>
-            <option value="#FromFamily">عن العائلة</option>
-            <option value="index.html">الرئيسية</option>
-        </select>
-    </header>
+    <body>
+        <header>
+            <img src="logo.png" alt="Title" id="logo">
+            <nav id="navbar" class="hidden">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#FromFamily" class="family-link">عن العائلة</a>
+                <a href="rules.html">قوانين العائلة</a>
+                <a href="crew.html">طاقم العائلة</a>
+                <a href="test.html">أختبر نفسك</a>
+                <a href="index.html#serversCard">الخوادم</a>
+            </nav>
+            <select id="selectMenu" class="hidden">
+                <option value="#serversCard">الخوادم</option>
+                <option value="test.html">أختبر نفسك</option>
+                <option value="crew.html">طاقم العائلة</option>
+                <option value="rules.html">قوانين العائلة</option>
+                <option value="#FromFamily">عن العائلة</option>
+                <option value="index.html">الرئيسية</option>
+            </select>
+            <hr class="headerEnder">
+        </header>
     
     <div class="imageContainer">
         <div class="backgroundImg"></div>
@@ -92,57 +92,84 @@
                     jailTimes: {
                         rules: [
                             {
-                                title: "PG <span style='color: white; opacity: 0.50; text-shadow: none;'>( فعل شيء خارق عن الطبيعة )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>120m</span>"
+                                title: "PG",
+                                description: "فعل أشياء خارقة بالواقع",
+                                time: "120m"
                             },
                             {
-                                title: "DM <span style='color: white; opacity: 0.50; text-shadow: none;'>( القتل بدون سبب )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>150m</span>"
+                                title: "DM ",
+                                description: "القتل بدون سبب",
+                                time: "150m"
                             },
                             {
-                                title: "VDM <span style='color: white; opacity: 0.50; text-shadow: none;'>( قتل اللاعبين بإستعمال المركبة بدون سبب )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>150m</span>"
+                                title: "VDM",
+                                description: "قتل اللاعبين بإستعمال المركبة بدون سبب",
+                                time: "150m"
                             },
                             {
-                                title: "RK <span style='color: white; opacity: 0.50; text-shadow: none;'>( القتل بدافع الإنتقام )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>100m</span>"
+                                title: "RK",
+                                description: "قتل الإنتقام",
+                                time: "100m"
                             },
                             {
-                                title: "SK <span style='color: white; opacity: 0.50; text-shadow: none;'>( القتل في منطقة الريسبون )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>150m</span>"
-                            },                            {
-                                title: "TK <span style='color: white; opacity: 0.50; text-shadow: none;'>( قتل صديقك بالفاكشن )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>150m</span>"
-                            },                            {
-                                title: "PK <span style='color: white; opacity: 0.50; text-shadow: none;'>( فقدان الذاكرة بعد الموت )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>100m</span>"
-                            },                            {
-                                title: "SL <span style='color: white; opacity: 0.50; text-shadow: none;'>( فعل أشياء مغززة )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>80m</span>"
-                            },                            {
-                                title: "WS <span style='color: white; opacity: 0.50; text-shadow: none;'>( حالة خاطئة للشخصية )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>30m</span>"
-                            },                            {
-                                title: "WA <span style='color: white; opacity: 0.50; text-shadow: none;'>( وضع إعلان خاطئ )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>30m</span>"
-                            },                            {
-                                title: "PD <span style='color: white; opacity: 0.50; text-shadow: none;'>( إستفزاز الشرطة لغرض المتعة )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>60m</span>"
-                            },                            {
-                                title: "DOS <span style='color: white; opacity: 0.50; text-shadow: none;'>( شارة بدون ديوتي أو العكس صحيح )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>80m</span>"
-                            },                            {
-                                title: "NJ <span style='color: white; opacity: 0.50; text-shadow: none;'>( السرقة والقفز فوق المركبات المتحركة )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>60m</span>"
-                            },                            {
-                                title: "NG <span style='color: white; opacity: 0.50; text-shadow: none;'>( إنزال الشخص من مركبته )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>60m</span>"
-                            },                            {
-                                title: "None-RP <span style='color: white; opacity: 0.50; text-shadow: none;'>( فعل الأشياء دون إستخدام الآربي )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>80m</span>"
-                            },                            {
-                                title: "Breaking property <span style='color: white; opacity: 0.50; text-shadow: none;'>( تكسير الممتلكات )</span>",
-                                description: "<span style='color: #c59a00; text-shadow: 0 0 1px #c59a00, 0 0 3px #c59a00, 0 0 5px #c59a00;'>30m</span>"
+                                title: "SK",
+                                description: "القتل في منطقة الريسباون",
+                                time: "150m"
+                            },                            
+                            {
+                                title: "TK",
+                                description: "قتل صديق معك بنفس الفاكشن",
+                                time: "150m"
+                            },                            
+                            {
+                                title: "PK",
+                                description: "فقدان الذاكرة بعد الموت",
+                                time: "100m"
+                            },                            
+                            {
+                                title: "SL",
+                                description: "فعل شيء مغزز",
+                                time: "80m"
+                            },                            
+                            {
+                                title: "WS",
+                                description: "حالة خاطئة للشخصية",
+                                time: "30m"
+                            },                            
+                            {
+                                title: "WA",
+                                description: "وضع إعلان خاطئ",
+                                time: "30m"
+                            },                            
+                            {
+                                title: "PD",
+                                description: "إستفزاز الشرطة لغرض المتعة",
+                                time: "60m"
+                            },                            
+                            {
+                                title: "DOS",
+                                description: "شارة بدون لبس الخدمة او العكس",
+                                time: "80m"
+                            },                            
+                            {
+                                title: "NJ",
+                                description: "السرقة والقفز فوق المركبات المتحركة",
+                                time: "60m"
+                            },                            
+                            {
+                                title: "NG",
+                                description: "إنزال الشخص من مركبته",
+                                time: "60m"
+                            },                            
+                            {
+                                title: "None-RP",
+                                description: "فعل الأشياء دون إستخدام الآربي",
+                                time: "80m"
+                            },                            
+                            {
+                                title: "Breaking property",
+                                description: "تخريب او تكسير ممتلكات",
+                                time: "30m"
                             },
                             
                         ]
@@ -170,7 +197,7 @@
                 };
                 
                 if (rulesData[section]) {
-                    const { rules } = rulesData[section];
+                    const { rules, time } = rulesData[section];
                     
                     
                     rules.forEach((rule, index) => {
@@ -179,6 +206,7 @@
                                 <p>
                                     <span class="rule-number">${index + 1}.</span>
                                     <span class="rule-title">${rule.title}</span>
+                                    ${rule.time ? `<span class="jailTime">${rule.time}</span>` : ''}
                                 </p>
                                 <small class="rule-description">${rule.description}</small>
                             </div>`;
@@ -189,10 +217,9 @@
             
                 const rules = rulesContainer.querySelectorAll('.rule');
                 rules.forEach(rule => {
-                    rule.style.backgroundColor = '#10101e';
+                    rule.style.backgroundColor = '#3c414b';
                     rule.style.borderRadius = '10px';
                     rule.style.padding = '8px';
-                    rule.style.border = '2px solid #ffffff13'; 
                     rule.style.marginBottom = '8px';
                     rule.style.height = '100px';
                 });
