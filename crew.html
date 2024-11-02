@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Worthington | ورثنيجتون</title>
+    <link rel="icon" href="logo.png">
 </head>
 <body>
     <header>
@@ -29,7 +30,7 @@
     </header>
     
     <div class="imageContainer">
-        <div class="backgroundImg"></div>
+        <div class="backgroundImg" id="background1"></div>
         <div class="title-and-line">
             <h1 class="title">طاقم العائلة</h1>
             <hr class='backgroundEnd'/>
@@ -40,7 +41,7 @@
         <div class="top-persons">
             <div class="person" id="top-person">
                 <img src="w.85.png">
-                <h5>Jasmine Worthington</h5>
+                <h5>Noora Bint'Khalid</h5>
                 <p class="Rank">مالكة العائلة</p>
             </div>
             <div class="person" id="top-person">
@@ -95,9 +96,9 @@
             window.location.href = selectedValue;
         } else if (selectedValue === 'rules.html') {
             window.location.href = selectedValue;
-        } else {
-            window.location.href = 'index.html'
-        }    
+        } else if (selectedValue === 'test.html') {
+            window.location.href = selectedValue;
+        }
     });
     </script>
     </body>

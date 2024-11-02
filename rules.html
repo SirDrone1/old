@@ -4,254 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
     <title>Worthington | ورثنيجتون</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <body>
-        <header>
-            <img src="logo.png" alt="Title" id="logo">
-            <nav id="navbar" class="hidden">
-                <a href="index.html">الرئيسية</a>
-                <a href="index.html#FromFamily" class="family-link">عن العائلة</a>
-                <a href="rules.html">قوانين العائلة</a>
-                <a href="crew.html">طاقم العائلة</a>
-                <a href="test.html">أختبر نفسك</a>
-                <a href="index.html#serversCard">الخوادم</a>
-            </nav>
-            <select id="selectMenu" class="hidden">
-                <option value="#serversCard">الخوادم</option>
-                <option value="test.html">أختبر نفسك</option>
-                <option value="crew.html">طاقم العائلة</option>
-                <option value="rules.html">قوانين العائلة</option>
-                <option value="#FromFamily">عن العائلة</option>
-                <option value="index.html">الرئيسية</option>
-            </select>
-            <hr class="headerEnder">
-        </header>
+    <header>
+        <img src="logo.png" alt="Title" id="logo">
+        <nav id="navbar" class="hidden">
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#FromFamily" class="family-link">عن العائلة</a>
+            <a href="rules.html">قوانين العائلة</a>
+            <a href="crew.html">طاقم العائلة</a>
+            <a href="test.html">أختبر نفسك</a>
+            <a href="index.html#serversCard">الخوادم</a>
+        </nav>
+        <select id="selectMenu" class="hidden">
+            <option value="#serversCard">الخوادم</option>
+            <option value="test.html">أختبر نفسك</option>
+            <option value="crew.html">طاقم العائلة</option>
+            <option value="rules.html">قوانين العائلة</option>
+            <option value="#FromFamily">عن العائلة</option>
+            <option value="index.html">الرئيسية</option>
+        </select>
+        <hr class="headerEnder">
+    </header>
     
     <div class="imageContainer">
-        <div class="backgroundImg"></div>
+        <div class="backgroundImg" id="background2"></div>
         <div class="title-and-line">
             <h1 class="title">القوانين</h1>
             <hr class='backgroundEnd'/>
         </div>
     </div>
+
     <div class="content-container">
         <aside class="sidebar">
             <button class="sidebar-btn active" onclick="changeRules('familyRules')">قوانين العائلة</button>
             <button class="sidebar-btn" onclick="changeRules('jailTimes')">أوقات السجون</button>
             <button class="sidebar-btn" onclick="changeRules('joinRequireds')">متطلبات الدخول للعائلة</button>
         </aside>
-        <script>
-            function changeRules(section) {
-                const rulesContainer = document.getElementById('rulesContainer');
-                let rulesHtml = '';
-                
-                const rulesData = {
-                    familyRules: {
-                        rules: [
-                            {
-                                title: "الأخلاق والإحترام",
-                                description: "يجب إحترام الجميع، المخالفة ستعرضك لعقوبات وخيمة"
-                            },
-                            {
-                                title: "النشر والتجارة",
-                                description: "يُمنع النشر والتجارة والإعلان والإنتحال في السيرفر او في الخاص للأعضاء منعًا نهائيًا"
-                            },
-                            {
-                                title: "العنصرية",
-                                description: "يُمنع العنصرية بجميع أنواعها بناءً على سمات مثل العرق أو الأصل القومي أو الجنس أو الانتماء الديني"
-                            },
-                            {
-                                title: "الأسماء والصور",
-                                description: "يُمنع استخدام أسماء غير مناسبة او صور غير مناسبة قد تتعرض للحظر النهائي او الطرد من السيرفر"
-                            },
-                            {
-                                title: "المحتوى",
-                                description: "يُمنع نشر المحتوى الغير اخلاقي والاباحي في السيرفر وعقوبته الحظر النهائي"
-                            },
-                            {
-                                title: "المواضيع السياسية والدينية",
-                                description: "يًمنع منعًا باتًا التحدث بالمواضيع السياسية او الدينية"
-                            },
-                            {
-                                title: "الحسابات",
-                                description: "يُمنع أستخدام حسابات أخرى لتفادي العقوبات"
-                            },
-                            {
-                                title: "طلب الرتب الإدارية",
-                                description: "يُمنع طلب الرتب الإدارية او الرتب الشرفية منعًا باتًا وقد يضعك طلبك في القائمة السوداء للإدارة"
-                            },
-                            {
-                                title: "القذف والسب",
-                                description: " يُمنع القذف والسب بجميع انواعه، كما يُمنع استخدام ألفاظ غير مناسبة للفئة العمرية دون سن الـ 13"
-                            }
-                        ]
-                    },
-                    jailTimes: {
-                        rules: [
-                            {
-                                title: "PG",
-                                description: "فعل أشياء خارقة بالواقع",
-                                time: "120m"
-                            },
-                            {
-                                title: "DM ",
-                                description: "القتل بدون سبب",
-                                time: "150m"
-                            },
-                            {
-                                title: "VDM",
-                                description: "قتل اللاعبين بإستعمال المركبة بدون سبب",
-                                time: "150m"
-                            },
-                            {
-                                title: "RK",
-                                description: "قتل الإنتقام",
-                                time: "100m"
-                            },
-                            {
-                                title: "SK",
-                                description: "القتل في منطقة الريسباون",
-                                time: "150m"
-                            },                            
-                            {
-                                title: "TK",
-                                description: "قتل صديق معك بنفس الفاكشن",
-                                time: "150m"
-                            },                            
-                            {
-                                title: "PK",
-                                description: "فقدان الذاكرة بعد الموت",
-                                time: "100m"
-                            },                            
-                            {
-                                title: "SL",
-                                description: "فعل شيء مغزز",
-                                time: "80m"
-                            },                            
-                            {
-                                title: "WS",
-                                description: "حالة خاطئة للشخصية",
-                                time: "30m"
-                            },                            
-                            {
-                                title: "WA",
-                                description: "وضع إعلان خاطئ",
-                                time: "30m"
-                            },                            
-                            {
-                                title: "PD",
-                                description: "إستفزاز الشرطة لغرض المتعة",
-                                time: "60m"
-                            },                            
-                            {
-                                title: "DOS",
-                                description: "شارة بدون لبس الخدمة او العكس",
-                                time: "80m"
-                            },                            
-                            {
-                                title: "NJ",
-                                description: "السرقة والقفز فوق المركبات المتحركة",
-                                time: "60m"
-                            },                            
-                            {
-                                title: "NG",
-                                description: "إنزال الشخص من مركبته",
-                                time: "60m"
-                            },                            
-                            {
-                                title: "None-RP",
-                                description: "فعل الأشياء دون إستخدام الآربي",
-                                time: "80m"
-                            },                            
-                            {
-                                title: "Breaking property",
-                                description: "تخريب او تكسير ممتلكات",
-                                time: "30m"
-                            },
-                            
-                        ]
-                    },
-                    joinRequireds: {
-                        rules: [
-                            {
-                                title: "الشخصيات",
-                                description: "يجب عليك التقديم بالشخصية الأساسية فقط"
-                            },
-                            {
-                                title: "عدد ساعات التواجد",
-                                description: "يجب أن تكون شخصيتك الأساسية قد تجاوزت الـ 100 ساعة داخلها"
-                            },
-                            {
-                                title: "السجل الإداري",
-                                description: "يجب أن يكون سجل حسابك أن لا يتجاوز الـ 4 مخالفات إدارية"
-                            },
-                            {
-                                title: "الخبرة الكافية",
-                                description: "يجب أن تكون لديك كامل الخبرات في الحياة الواقعية"
-                            }
-                        ]
-                    }
-                };
-                
-                if (rulesData[section]) {
-                    const { rules, time } = rulesData[section];
-                    
-                    
-                    rules.forEach((rule, index) => {
-                        rulesHtml += `
-                            <div class="rule">
-                                <p>
-                                    <span class="rule-number">${index + 1}.</span>
-                                    <span class="rule-title">${rule.title}</span>
-                                    ${rule.time ? `<span class="jailTime">${rule.time}</span>` : ''}
-                                </p>
-                                <small class="rule-description">${rule.description}</small>
-                            </div>`;
-                    });
-                }
-                
-                rulesContainer.innerHTML = rulesHtml;
-            
-                const rules = rulesContainer.querySelectorAll('.rule');
-                rules.forEach(rule => {
-                    rule.style.backgroundColor = '#3c414b';
-                    rule.style.borderRadius = '10px';
-                    rule.style.padding = '8px';
-                    rule.style.marginBottom = '8px';
-                    rule.style.height = '100px';
-                });
-                
-                document.querySelectorAll('.sidebar-btn').forEach(btn => btn.classList.remove('active'));
-                event.target.classList.add('active');
-            }
-            
-            document.addEventListener('DOMContentLoaded', () => {
-                changeRules('familyRules');
-            });
-            </script>
-            
-            
-<section class="rules-container" id="rulesContainer">
-</section>
+
+        <section class="rules-container" id="rulesContainer"></section>
     </div>
+
     <hr class="PageEnder" />
     <p class='copyright'>© 2024 Worthington Copyrights - Developed by iDrone</p>
-<script>
-    const selectMenu = document.getElementById('selectMenu');
 
-selectMenu.addEventListener('change', function() {
-    const selectedValue = this.value;
+    <script>
+        function changeRules(section) {
+            const rulesContainer = document.getElementById('rulesContainer');
+            let rulesHtml = '';
+            
+            const rulesData = {
+                familyRules: {
+                    rules: [
+                        { title: "الأخلاق والإحترام", description: "يجب إحترام الجميع، المخالفة ستعرضك لعقوبات وخيمة" },
+                        { title: "النشر والتجارة", description: "يُمنع النشر والتجارة والإعلان والإنتحال في السيرفر او في الخاص للأعضاء منعًا نهائيًا" },
+                        { title: "العنصرية", description: "يُمنع العنصرية بجميع أنواعها بناءً على سمات مثل العرق أو الأصل القومي أو الجنس أو الانتماء الديني" },
+                        { title: "الأسماء والصور", description: "يُمنع استخدام أسماء غير مناسبة او صور غير مناسبة قد تتعرض للحظر النهائي او الطرد من السيرفر" },
+                        { title: "المحتوى", description: "يُمنع نشر المحتوى الغير اخلاقي والاباحي في السيرفر وعقوبته الحظر النهائي" },
+                        { title: "المواضيع السياسية والدينية", description: "يًمنع منعًا باتًا التحدث بالمواضيع السياسية او الدينية" },
+                        { title: "الحسابات", description: "يُمنع أستخدام حسابات أخرى لتفادي العقوبات" },
+                        { title: "طلب الرتب الإدارية", description: "يُمنع طلب الرتب الإدارية او الرتب الشرفية منعًا باتًا وقد يضعك طلبك في القائمة السوداء للإدارة" },
+                        { title: "القذف والسب", description: "يُمنع القذف والسب بجميع انواعه، كما يُمنع استخدام ألفاظ غير مناسبة للفئة العمرية دون سن الـ 13" }
+                    ]
+                },
+                jailTimes: {
+                    rules: [
+                        { title: "PG", description: "فعل أشياء خارقة بالواقع", time: "120m" },
+                        { title: "DM", description: "القتل بدون سبب", time: "150m" },
+                        { title: "VDM", description: "قتل اللاعبين بإستعمال المركبة بدون سبب", time: "150m" },
+                        { title: "RK", description: "قتل الإنتقام", time: "100m" },
+                        { title: "SK", description: "القتل في منطقة الريسباون", time: "150m" },
+                        { title: "TK", description: "قتل صديق معك بنفس الفاكشن", time: "150m" },
+                        { title: "PK", description: "فقدان الذاكرة بعد الموت", time: "100m" },
+                        { title: "SL", description: "فعل شيء مغزز", time: "80m" },
+                        { title: "WS", description: "حالة خاطئة للشخصية", time: "30m" },
+                        { title: "WA", description: "وضع إعلان خاطئ", time: "30m" },
+                        { title: "PD", description: "إستفزاز الشرطة لغرض المتعة", time: "60m" },
+                        { title: "DOS", description: "شارة بدون لبس الخدمة او العكس", time: "80m" },
+                        { title: "NJ", description: "السرقة والقفز فوق المركبات المتحركة", time: "60m" },
+                        { title: "NG", description: "إنزال الشخص من مركبته", time: "60m" },
+                        { title: "None-RP", description: "فعل الأشياء دون إستخدام الآربي", time: "80m" },
+                        { title: "Breaking property", description: "تخريب او تكسير ممتلكات", time: "30m" }
+                    ]
+                },
+                joinRequireds: {
+                    rules: [
+                        { title: "الشخصيات", description: "يجب عليك التقديم بالشخصية الأساسية فقط" },
+                        { title: "عدد ساعات التواجد", description: "يجب أن تكون شخصيتك الأساسية قد تجاوزت الـ 100 ساعة داخلها" },
+                        { title: "السجل الإداري", description: "يجب أن يكون سجل حسابك أن لا يتجاوز الـ 4 مخالفات إدارية" },
+                        { title: "الخبرة الكافية", description: "يجب أن تكون لديك كامل الخبرات في الحياة الواقعية" }
+                    ]
+                }
+            };
+            
+            if (rulesData[section]) {
+                const { rules } = rulesData[section];
+                
+                rules.forEach((rule, index) => {
+                    rulesHtml += `
+                        <div class="rule">
+                            <p>
+                                <span class="rule-number">${index + 1}.</span>
+                                <span class="rule-title">${rule.title}</span>
+                                ${rule.time ? `<span class="jailTime">${rule.time}</span>` : ''}
+                            </p>
+                            <small class="rule-description">${rule.description}</small>
+                        </div>`;
+                });
+            }
+            
+            rulesContainer.innerHTML = rulesHtml;
 
-    if (selectedValue === 'index.html') {
-        window.location.href = selectedValue;
-    } else if (selectedValue === 'crew.html') {
-        window.location.href = selectedValue;
-    } else if (selectedValue === 'test.html') {
-            window.location.href = selectedValue
-        }});
-</script>
+            const rules = rulesContainer.querySelectorAll('.rule');
+            rules.forEach(rule => {
+                rule.style.backgroundColor = '#3c414b';
+                rule.style.borderRadius = '10px';
+                rule.style.padding = '8px';
+                rule.style.marginBottom = '8px';
+                rule.style.height = '100px';
+            });
+            
+            document.querySelectorAll('.sidebar-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.sidebar-btn[onclick="changeRules('${section}')"]`).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialSection = 'familyRules';
+            changeRules(initialSection);
+        });
+
+        const selectMenu = document.getElementById('selectMenu');
+        selectMenu.addEventListener('change', function() {
+            const selectedValue = this.value;
+
+            if (selectedValue !== 'index.html') {
+                window.location.href = selectedValue;
+            }
+        });
+    </script>
 </body>
 </html>

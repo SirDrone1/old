@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="test.css">
+    <link rel="icon" href="logo.png">
     <title>Worthington | ورثنيجتون</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -30,7 +31,7 @@
         <hr class="headerEnder">
     </header>
     <div class="imageContainer">
-        <div class="backgroundImg"></div>
+        <div class="backgroundImg" id="background3"></div>
         <div class="title-and-line">
             <h1 class="title">أختبر نفسك</h1>
             <hr class='backgroundEnd'/>
@@ -193,6 +194,7 @@
             resultText.innerText = `لقد انتهى الاختبار! الإجابات الصحيحة: ${correctAnswersCount} من ${questions.length}`;
             resultText.style.color = "white";
             resultText.style.userSelect = "none"
+            resultText.style.maxWidth = "none"
         }
 
         function resetQuiz() {
@@ -211,6 +213,19 @@
         startTimer();
     }
 });
+const selectMenu = document.getElementById('selectMenu');
+
+selectMenu.addEventListener('change', function() {
+    const selectedValue = this.value;
+
+    if (selectedValue === 'rules.html') {
+        window.location.href = selectedValue;
+    } else if (selectedValue === 'crew.html') {
+        window.location.href = selectedValue;
+    } else if (selectedValue === 'index.html') {
+        window.location.href = selectedValue
+    }
+    });
     </script>
 </body>
 </html>
