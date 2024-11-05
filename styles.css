@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Baloo+Bhaijaan+2:wght@400..800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+Arabic:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 :root { --MainColor: #00d8a3; --SecondaryColor: #00d8a2bb; --BackgroundColor: #3c414b; --TextColor: white; }
 
-body { background-color: #31343d; }
+body { background-color: #151521; }
 *{ padding: 0; margin: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; background-size: 1600px; }
 
 .button-container { display: flex; justify-content: center; align-items: center; height: 100vh; }
@@ -78,7 +78,7 @@ p {
   max-width: none;  text-decoration: none; padding-left: 10px; text-align: right;z-index: 2;
 }
 
-#FromFamily { scroll-margin-top: 158px; }
+#about-us { scroll-margin-top: 430px; }
 
 .page-end { width: 100%; height: 1px; text-align: center; margin: 0 auto; margin-top: 30px; opacity: 0.70; }
 
@@ -91,11 +91,11 @@ body.no-scroll { overflow: hidden; }
 
 header { 
   position: fixed; display: flex; align-items: center; width: 100%; height: 70px; justify-content: space-between; padding: 10px 20px;
-  background-color: #33373dbd; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); animation: slideDown 0.7s ease-in-out; z-index: 3;
+  background-color: #15152195; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); animation: slideDown 0.7s ease-in-out; z-index: 3;
 }
 .header-end { position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: #00d8a3; }
 header img { position: absolute; width: 50px; height: auto;  right: 20px; top: 50%; transform: translateY(-50%); z-index: 1; }
-nav { position: relative; display: flex; align-items: left; justify-content: flex-end; flex-grow: 1; margin: 0 50px; z-index: 2; }
+nav { position: relative; display: flex; justify-content: center; flex-grow: 1; z-index: 2; }
 nav a { 
   display: flex; justify-content: center; align-items: center; user-select: none; margin: 0 0.5rem; color: #ffffff; opacity: 0.80;
   text-decoration: none; font-size: 0.9rem; font-family: "Tajawal", sans-serif; padding: 0.5rem 1rem; 
@@ -127,19 +127,26 @@ nav a:hover { opacity: 0.60; }
 
 .background-end { border: none; border-top: 2px solid white; width: 100%; margin: 0; }
 
-.server-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 53px; padding: 20px; direction: rtl; }
-
-.server-card {
-  display: block; background-color: #3c414b; padding: 30px; border-radius: 15px; box-shadow: 0px 0px 7px #ffffff; 
-  transition: transform 0.1s, box-shadow 0.3s; text-decoration: none; color: white; width: 350px; cursor: pointer; 
-  margin-top: 150px; text-align: center;
+.discord-servers-title { 
+  color: white; font-family: "Tajawal", sans-serif; font-size: 1.2rem; font-weight: 600; text-align: center; 
+  margin-bottom: 20px; margin-top: 60px;
 }
-
-.server-card:hover { transform: scale(1.05); }
-.server-card:active { transform: scale(0.9); }
-.server-icon img { user-select: none; width: 80px;  height: 80px; border-radius: 18px; }
-
-h2 { user-select: none; margin: 15px 0; font-family: "Tajawal", sans-serif; font-size: 1.1rem; max-width: 350px; text-align: center; }
+.server-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 0 20px; direction: rtl; }
+.server-card { 
+  display: flex; flex-direction: column; color: white; text-decoration: none; width: 300px; border-radius: 15px; overflow: hidden;
+  transition: transform 0.3s; cursor: pointer; background-color: #1e1e2e;
+}
+.server-card:hover { transform: translateY(-10px); }
+.server-card:active { transform: translateY(-5px); }
+.server-image { 
+  position: relative; width: 100%; height: 150px; overflow: hidden; display: flex; align-items: center; justify-content: center;
+}
+.server-image img { width: 100%; height: 100%; object-fit: cover; border: none; }
+.server-info { position: relative; height: 70px; padding: 20px; text-align: center; }
+.server-info h2 { 
+  position: absolute; margin: 0; font-family: "Tajawal", sans-serif; font-size: 0.8rem; left: 20px; right: auto; top: 50%;
+  transform: translateY(-50%); text-align: left;
+}
 
 .sidebar { display: flex; width: 300px; padding: 20px;  flex-direction: column; gap: 10px; margin-right: 20px; }
 
@@ -148,29 +155,30 @@ h2 { user-select: none; margin: 15px 0; font-family: "Tajawal", sans-serif; font
 .sidebar-btn {
   background-color: transparent; color: white; padding: 10px; border: none; border-radius: 5px; 
   font-size: 1em; font-weight: 600; font-family: "Tajawal", sans-serif; cursor: pointer; text-align: left; 
-  transition: background-color 0.1s ease; width: calc(100% - 50px); margin-left: 120px; animation: slideInFromLeft 0.7s ease-in-out;
+  transition: background-color 0.1s, color 0.3s; width: calc(100% - 50px);
+  margin-left: 120px; animation: slideInFromLeft 0.7s ease-in-out;
 }
-.sidebar-btn:hover { background-color: #3c414b; }
-.sidebar-btn.active { background-color: #3c414b; }
+.sidebar-btn:hover { background-color: #3c414b; color: var(--MainColor); }
+.sidebar-btn.active { background-color: #3c414b; color: var(--MainColor); }
 
 .rules-container { flex: 1; max-width: 860px; font-family: "Tajawal", sans-serif; margin: 10px; padding: 10px; border-radius: 8px; }
-.rule { margin-bottom: 8px; width: 100%; padding: 8px; border-radius: 10px; height: 100px;color: white; }
-.rule p { display: flex; margin: 0; font-size: 0.9rem; line-height: 1.4; margin-left: 20px; text-align: right;  align-items: center; }
+.rule { margin-bottom: 8px; width: 100%; padding: 8px; border-radius: 10px; height: 100px; color: white; }
+.rule p { display: flex; margin: 0; font-size: 0.9rem; line-height: 1.4; margin-left: 20px; text-align: right; align-items: center; }
 .rule-number { 
   display: flex; text-align: left; color: #9A9CAE; user-select: none; 
-  font-size: 1rem; font-weight: 500; font-family: "Tajawal", sans-serif; margin-right: 15px;
+  font-size: 1rem; font-weight: 500; font-family: "Tajawal", sans-serif; margin-right: 3px; margin-left: -7px;
 }
 .rule-title { 
-  display: inline; color: #B4BCC7; opacity: 0.80; font-weight: 600; font-size: 1.3em; 
+  display: inline; color: var(--MainColor); text-shadow: 0 0 20px var(--MainColor); opacity: 0.80; font-weight: 600; font-size: 1.3em; 
   font-family: "Tajawal", sans-serif; margin-left: 5px;
 }
 
 .rule-description { 
-  display: block; color: #ffffff97; font-size: 0.9em; font-family: "Tajawal", sans-serif; font-weight: 600; margin-left: 10px; 
+  display: block; color: var(--TextColor); opacity: 0.70; font-size: 0.9em; font-family: "Tajawal", sans-serif; font-weight: 600; margin-left: 10px; 
   margin-top: 10px; text-align: left;
 }
-.jailTime { background-color: #b4bcc766; border-radius: 0.55rem; width: 45px; font-size: 0.85rem; font-weight: 600;
-  font-family: "Tajawal", sans-serif; text-align: center; margin-left: auto;
+.jailTime { color: var(--TextColor); border-radius: 0.55rem; width: 45px; 
+  font-size: 0.85rem; font-weight: 600; font-family: "Tajawal", sans-serif; text-align: center; margin-left: auto;
 }
 
 .top-persons { display: flex; justify-content: center; margin-bottom: 20px; margin-top: 20px; }
@@ -178,15 +186,15 @@ h2 { user-select: none; margin: 15px 0; font-family: "Tajawal", sans-serif; font
 h5 { font-size: 0.9rem; font-family: "Tajawal", sans-serif; color: #9fabbd; font-weight: bold; margin-bottom: 10px;}
 .Rank { color: rgba(255, 255, 255, 0.584); font-weight: bold; }
 .person { 
-  user-select: none; background-color: #3c414b; border-radius: 10px; margin: 10px; padding: 10px; height: 200px; width: 155px;
+  user-select: none; background-color: #1e1e2e; border-radius: 10px; margin: 10px; padding: 10px; height: 200px; width: 155px;
   text-align: center; transition: .2s; border: 2px solid #9fabbd;
-   box-shadow: 0 0 10px #9fabbd9a; animation: scaleUpDown 0.6s ease forwards;
+  box-shadow: 0 0 10px #2f2f46; animation: scaleUpDown 0.6s ease forwards; 
 }
 .person img { width: 80%; height: 60%; object-fit: cover; border-radius: 50%; margin-top: 12px; }
 
 .row { display: flex; justify-content: center; margin-top: 20px; }
 
-.person:hover, #top-person:hover { transform: scale(1.1); box-shadow: 0px 0px 15px white; }
+.person:hover { box-shadow: 0px 0px 15px var(--TextColor); }
 
 #logo { transition: .2s; }
 #logo:hover { opacity: 0.80; }
@@ -195,19 +203,19 @@ h5 { font-size: 0.9rem; font-family: "Tajawal", sans-serif; color: #9fabbd; font
   position: relative; display: flex; gap: 20px; justify-content: center; align-items: center; padding: 20px; flex-wrap: wrap; }
 
 .card-background {
-  position: absolute; background-color: #3c414b; width: calc(70% + 73px); height: 110%; z-index: -1;
-  box-shadow: 0 0 10px #9fabbd9a; border-radius: 12px; top: 0; left: 50%; transform: translateX(-50%); padding-right: 13%;
+  position: absolute; background-color: #1e1e2e; width: calc(70% + 73px); height: 110%; z-index: -1;
+  box-shadow: 0 0 10px #2f2f46; border-radius: 12px; top: 0; left: 50%; transform: translateX(-50%); padding-right: 13%;
 }
 
 .card {
-  display: flex; background-color: transparent; border-radius: 12px; padding: 20px; text-align: center; color: #fff;
+  display: flex; background-color: transparent; border-radius: 12px; padding: 20px; text-align: center; color: var(--MainColor);
   font-family: 'IBM Plex Sans Arabic', sans-serif;  flex: 1 1 250px;  max-width: 300px;  
   transition: transform 0.3s ease, box-shadow 0.3s ease; margin-bottom: 30px;  flex-direction: column;
   justify-content: center; align-items: center; height: 100%;
 }
 
 .count { 
-  font-size: 2rem; font-family: "Lato", sans-serif; color: white; animation: glowAnimation 1.5s infinite alternate;
+  font-size: 2rem; font-family: "Lato", sans-serif; font-weight: 600; color: var(--TextColor); animation: glowAnimation 1.5s infinite alternate;
   margin-bottom: 5px; margin-top: 80px; text-align: center;
 }
 
@@ -225,13 +233,13 @@ p {
   margin-left: 10px; direction: rtl;
 }
 .description-title { 
-  display: flex; align-items: center; color: white; overflow: hidden; font-size: 2rem; font-family: "Tajawal", sans-serif;
-  padding: 0 20px; margin-right: 180px; max-width: none; text-decoration: none; padding-left: 10px; z-index: 2;
+  display: flex; align-items: center; color: white; overflow: hidden; font-size: 1.3rem; font-family: "Tajawal", sans-serif;
+  padding: 0 20px; margin-right: 180px; max-width: none; text-decoration: none; padding-left: 10px; gap: 10px; z-index: 2;
 }
 .title-text { font-family: "Tajawal", sans-serif;  line-height: 1.5; }
 
 .description-text { 
-  color: white; font-size: 1.2rem; font-family: "Tajawal", sans-serif; max-width: 1100px; padding: 0 20px; margin-right: 180px;
+  color: white; font-size: 0.9rem; font-family: "Tajawal", sans-serif; max-width: 1100px; padding: 0 20px; margin-right: 180px;
   text-decoration: none; padding-left: 10px; text-align: right;
 }
 .correct-icon { height: 20px; width: 20px; }
@@ -244,7 +252,7 @@ p {
   .rules-container { margin: 0; padding: 10px; }
   .rule { margin-bottom: 5px; padding: 8px; }
   .rule-number, .rule-title { font-size: 0.7rem; }
-  .rule-description {font-size: 0.9rem; }
+  .rule-description { font-size: 0.9rem; }
   .description-section { width: 100%; margin: 0; padding: 0; }
   .description-title { margin-right: 10px; }
   .description-text { margin-right: 10px; }
@@ -252,7 +260,7 @@ p {
   .notes { margin-top: 20px; }
   .copyright { font-size: 12px; }
   .notes { font-size: 0.9rem; }
-  .title-text { font-size: 1rem; }
+  .title-text { font-size: 0.8rem; margin-bottom: 10px; }
 }
 @media (max-width: 768px) { 
   header { height: 70px; }
@@ -261,7 +269,7 @@ p {
   .title { font-size: 20px; }
   .logo img { width: 60px; }
   .top-persons, .row { flex-direction: column; align-items: center; }
-  .person { width: 90%; margin: 10px 0; }
+  .person { width: 90%; margin: 10px 0; transition: transform 0.3s ease, box-shadow 0.3s ease;  }
   .person img { width: 80px; height: 80px; }
 }
 @media (max-width: 948px) {
