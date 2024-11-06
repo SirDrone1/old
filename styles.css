@@ -264,7 +264,6 @@ p {
 }
 @media (max-width: 768px) { 
   header { height: 70px; }
-  header img { top: 2px; }
   .background-header { top: -2px; }
   .title { font-size: 20px; }
   .logo img { width: 60px; }
