@@ -158,18 +158,20 @@ nav a:hover { opacity: 0.60; }
   transition: background-color 0.1s, color 0.3s; width: calc(100% - 50px);
   margin-left: 120px; animation: slideInFromLeft 0.7s ease-in-out;
 }
-.sidebar-btn:hover { background-color: #3c414b; color: var(--MainColor); }
-.sidebar-btn.active { background-color: #3c414b; color: var(--MainColor); }
+.sidebar-btn:hover { background-color: #3c414b; color: #B4BCC7; }
+.sidebar-btn.active { background-color: #9fabbd3f; color: #B4BCC7; }
 
 .rules-container { flex: 1; max-width: 860px; font-family: "Tajawal", sans-serif; margin: 10px; padding: 10px; border-radius: 8px; }
+.rules-container .rule { opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease; }
+.rules-container.show .rule { opacity: 1; transform: translateY(0); }
 .rule { margin-bottom: 8px; width: 100%; padding: 8px; border-radius: 10px; height: 100px; color: white; }
 .rule p { display: flex; margin: 0; font-size: 0.9rem; line-height: 1.4; margin-left: 20px; text-align: right; align-items: center; }
 .rule-number { 
-  display: flex; text-align: left; color: #9A9CAE; user-select: none; 
-  font-size: 1rem; font-weight: 500; font-family: "Tajawal", sans-serif; margin-right: 3px; margin-left: -7px;
+  display: flex; text-align: left; color: #9a9cae; user-select: none; 
+  font-size: 1rem; font-weight: 600; font-family: "Tajawal", sans-serif; margin-right: 3px; margin-left: -7px;
 }
 .rule-title { 
-  display: inline; color: var(--MainColor); text-shadow: 0 0 20px var(--MainColor); opacity: 0.80; font-weight: 600; font-size: 1.3em; 
+  display: inline; color: #B4BCC7; text-shadow: 0 0 1px #B4BCC7; opacity: 0.80; font-weight: 600; font-size: 1.3em; 
   font-family: "Tajawal", sans-serif; margin-left: 5px;
 }
 
