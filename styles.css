@@ -8,13 +8,13 @@ body { background-color: #151521; }
 .button-container { display: flex; justify-content: center; align-items: center; height: 100vh; }
 
 .center-button { 
-  position: absolute; display: flex; user-select: none; background-color: #6c757d; color: var(--TextColor); opacity: 0.70; 
+  position: absolute; display: flex; user-select: none; background-color: #6c757d83; color: var(--TextColor);
   padding: 10px 20px; text-decoration: none; border: none; border-radius: 70px; font-size: 16px; font-family: "Tajawal", sans-serif; 
   width: 15vw;  max-width: 250px; height: 50px; top: 60%; left: 50%; cursor: pointer; transform: translate(-50%, -50%) scale(0.8); 
   transition: .2s; justify-content: center; align-items: center; z-index: 2;
 }
 
-.center-button:hover { opacity: 1; }
+.center-button:hover { background-color: #6c757d; }
 
 .image-end { width: 100%; border: none; border-top: 5px solid #B4BCC7; position: relative; top: -5px; margin: 0; z-index: 3; }
 
@@ -264,6 +264,14 @@ p {
   .copyright { font-size: 12px; }
   .notes { font-size: 0.9rem; }
   .title-text { font-size: 0.8rem; margin-bottom: 10px; }
+  header img {
+    margin-top: 2px;
+  }
+}
+@media (min-width: 893px) and (max-width: 1465px) {
+  header img {
+    margin-right: 30px;
+  }
 }
 @media (max-width: 768px) { 
   header { height: 70px; }
