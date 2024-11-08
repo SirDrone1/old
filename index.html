@@ -16,19 +16,19 @@
         <img src="logo.png" alt="Title" id="logo">
         <nav id="navbar" class="hidden">
             <a href="https://idrone99.github.io/old">الرئيسية</a>
-            <a href="#about-us" class="family-link">عن العائلة</a>
+            <a href="https://idrone99.github.io/old/#about-us">عن العائلة</a>
             <a href="https://idrone99.github.io/old/rules">قوانين العائلة</a>
             <a href="https://idrone99.github.io/old/crew">طاقم العائلة</a>
             <a href="https://idrone99.github.io/old/test">أختبر نفسك</a>
-            <a href="#servers">الخوادم</a>
+            <a href="https://idrone99.github.io/old/#servers">الخوادم</a>
         </nav>
         <select id="selectMenu" class="hidden">
-            <option value="#serversCard">الخوادم</option>
-            <option value="test.html">أختبر نفسك</option>
-            <option value="crew.html">طاقم العائلة</option>
-            <option value="rules.html">قوانين العائلة</option>
-            <option value="#about-us">عن العائلة</option>
-            <option value="index.html">الرئيسية</option>
+            <option value="https://idrone99.github.io/old/#servers">الخوادم</option>
+            <option value="https://idrone99.github.io/old/test">أختبر نفسك</option>
+            <option value="https://idrone99.github.io/old/crew">طاقم العائلة</option>
+            <option value="https://idrone99.github.io/old/rules">قوانين العائلة</option>
+            <option value="https://idrone99.github.io/old/#about-us">عن العائلة</option>
+            <option value="https://idrone99.github.io/old/#">الرئيسية</option>
         </select>
         <hr class="header-end">
     </header>
@@ -165,15 +165,10 @@
 
 selectMenu.addEventListener('change', function() {
     const selectedValue = this.value;
-
-    if (selectedValue === 'rules.html') {
-        window.location.href = selectedValue;
-    } else if (selectedValue === 'crew.html') {
-        window.location.href = selectedValue;
-    } else if (selectedValue === 'test.html') {
+    if (selectedValue !== 'https:/idrone99.github.io/old/#') {
         window.location.href = selectedValue
-        } else {
-        window.location.href = 'index.html'
+    } else {
+        window.location.href = 'https://idrone99.github.io/old/#'
     }
 });
 </script>
